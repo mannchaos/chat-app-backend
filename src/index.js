@@ -1,7 +1,7 @@
-import express from "express";
-import dotenv from "dotenv";
-import authRoutes from "./routes/auth.route.js";
-import { dbConnect } from "./lib/db.js";
+import express from 'express';
+import dotenv from 'dotenv';
+import authRoutes from './routes/auth.route.js';
+import { dbConnect } from './lib/db.js';
 
 const app = express();
 dotenv.config();
@@ -12,7 +12,7 @@ const startServer = async () => {
     await dbConnect();
 
     app.use(express.json());
-    app.use("/api/auth", authRoutes);
+    app.use('/api/auth', authRoutes);
 
     app.listen(PORT, () => {
       console.log(`server is running on port ${PORT}`);
